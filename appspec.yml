@@ -7,4 +7,4 @@ hooks:
       runas: root
   ApplicationStart:
     - location: scripts/start.sh
-      runas: owner
+      runas: root
