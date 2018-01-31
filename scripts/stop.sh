@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-cd /var/app/current
+cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
 
-if [ -e ./bin/phoenix ]
-then
-  ./bin/deeplock_app stop
-fi
+kill -9 $(pidof beam.smp)
