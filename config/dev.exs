@@ -54,5 +54,5 @@ config :blog_phoenix, BlogPhoenix.Repo,
   username: "postgres",
   password: "postgres",
   database: "blog_phoenix_dev",
-  hostname: "localhost",
+  hostname: "hr3b71ilc24vax.cpf3fdiqllig.ap-southeast-1.rds.amazonaws.com",
   pool_size: 10
