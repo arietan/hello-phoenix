@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-kill -9 $(pidof beam.smp)
+if [[ $(pidof beam.smp) ]] 
+then
+  kill -9 $(pidof beam.smp)
+fi
