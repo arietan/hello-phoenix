@@ -14,7 +14,6 @@ then
   aws s3 cp s3://helloerlang-secretsbucket-7apezuluts7h/creds_prod.txt .
   eval $(cat creds_prod.txt | sed 's/^/export /')
   rm creds_prod.txt
-  MIX_ENV=prod
 fi
 
 # Install deps
