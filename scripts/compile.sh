@@ -2,7 +2,7 @@
 
 cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
 
-if [$DEPLOYMENT_GROUP_NAME == 'helloPhoenix-Staging'] 
+if [ "$DEPLOYMENT_GROUP_NAME" == "helloPhoenix-Staging" ]
 then
   aws s3 cp s3://helloerlang-secretsbucket-7apezuluts7h/creds_staging.txt .
   eval $(cat creds_staging.txt | sed 's/^/export /')
