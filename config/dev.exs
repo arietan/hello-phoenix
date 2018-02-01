@@ -53,6 +53,6 @@ config :blog_phoenix, BlogPhoenix.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: System.get_env("DBUSER"),
   password: System.get_env("DBPASS"),
-  database: System.get_env("DBDATABASE"),",
+  database: System.get_env("DBDATABASE"),
   hostname: System.get_env("DBHOST"),
   pool_size: 10
