@@ -2,6 +2,7 @@
 
 cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
 
+#Load environment credentials
 if [ "$DEPLOYMENT_GROUP_NAME" == "helloPhoenix-Staging" ]
 then
   aws s3 cp s3://helloerlang-secretsbucket-7apezuluts7h/creds_staging.txt .
@@ -22,4 +23,9 @@ mix local.rebar --force
 mix deps.get
 cd assets && npm install
 cd ..
-mix ecto.create
+
+#Create and migrate data if there is update
+mix ecto.create && mix ecto.migrate
+
+#Run Unit test
+mix test
