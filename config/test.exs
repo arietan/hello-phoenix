@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :blog_phoenix, BlogPhoenix.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "blog_phoenix_test",
-  hostname: "localhost",
+  username: System.get_env("DBUSER"),
+  password: System.get_env("DBPASS"),
+  database: System.get_env("DBDATABASE"),
+  hostname: System.get_env("DBHOST"),
   pool: Ecto.Adapters.SQL.Sandbox
