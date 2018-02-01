@@ -6,7 +6,7 @@ if [$DEPLOYMENT_GROUP_NAME == 'helloPhoenix-Staging']
 then
   aws s3 cp s3://helloerlang-secretsbucket-7apezuluts7h/creds_staging.txt .
   eval $(cat creds_staging.txt | sed 's/^/export /')
-  rm creds.txt
+  rm creds_staging.txt
 fi
 
 # Install deps
