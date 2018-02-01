@@ -51,8 +51,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :blog_phoenix, BlogPhoenix.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "blog_phoenix_dev",
-  hostname: "hrzd9wudsxwnnp.cpf3fdiqllig.ap-southeast-1.rds.amazonaws.com",
+  username: System.get_env("DBUSER"),
+  password: System.get_env("DBPASS"),
+  database: System.get_env("DBDATABASE"),",
+  hostname: System.get_env("DBHOST"),
   pool_size: 10
